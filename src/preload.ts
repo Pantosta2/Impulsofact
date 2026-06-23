@@ -3,7 +3,8 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
 const api = {
-    addProduct: (ProductID: number, Nombre: string, Descripcion: string, Precio: number) => ipcRenderer.invoke('product:add', ProductID, Nombre, Descripcion, Precio),
+    addProduct: (Nombre: string, Descripcion: string, Precio: number) =>
+      ipcRenderer.invoke('product:add', Nombre, Descripcion, Precio),
     deleteProduct: (ProductID: number) => ipcRenderer.invoke('product:delete', ProductID),
     getProducts: () => ipcRenderer.invoke('product:get'),
 };

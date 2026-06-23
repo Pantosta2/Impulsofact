@@ -1,48 +1,12 @@
 <!doctype html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Productos</title>
-    <!-- Estilos globales -->
-    <link rel="stylesheet" href="./index.css" />
-    <!-- Estilos de componentes -->
-    <link rel="stylesheet" href="./src/components/sidebar.css" />
-    <link rel="stylesheet" href="./src/views/vistas.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        height: 100vh;
-        overflow: hidden;
-      }
-    </style>
   </head>
   <body>
-    <div class="main-container">
-      <!-- Sidebar Component -->
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-          <div class="sidebar-logo">
-            <span>📦</span>
-            <span>Impulsofact</span>
-          </div>
-          <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
-        </div>
-        <ul class="sidebar-menu" id="sidebar-menu"></ul>
-      </aside>
-
-      <!-- Contenido Principal -->
-      <div class="content"></div>
-    </div>
-
-    <!-- Scripts -->
-    <script type="module" src="/src/app.ts"></script>
-    <script type="module" src="/src/renderer.ts"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

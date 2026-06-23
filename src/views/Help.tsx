@@ -1,10 +1,8 @@
-// Vista Ayuda
-export class VistaAyuda {
-  render(): HTMLElement {
-    const page = document.createElement('div');
-    page.id = 'page-help';
-    page.className = 'page';
-    page.innerHTML = `
+import React from 'react';
+
+export default function Help() {
+  return (
+    <div className="page">
       <h1>Ayuda</h1>
       <p>¿Necesitas ayuda? Aquí puedes encontrar documentación y soporte.</p>
       <h2>Preguntas frecuentes</h2>
@@ -13,7 +11,6 @@ export class VistaAyuda {
         <li>¿Cómo editar un producto? Haz clic en el botón correspondiente en la tabla de productos.</li>
         <li>¿Cómo eliminar un producto? Usa el botón de eliminar en la fila del producto.</li>
       </ul>
-    `;
-    return page;
-  }
+    </div>
+  );
 }

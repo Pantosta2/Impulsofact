@@ -106,3 +106,26 @@
   border-left: none;
   border-top-color: #fff;
 }
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 15px;
+}
+
+.clear-data-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(239, 68, 68, 0.9);
+}
+
+.clear-data-btn:hover {
+  background: rgba(220, 38, 38, 0.95);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
