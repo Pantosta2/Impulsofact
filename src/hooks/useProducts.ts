@@ -42,6 +42,18 @@ export function useProducts() {
     await loadProducts();
   };
 
+  const updateProduct = async (id: number, nombre: string, descripcion: string, precio: number) => {
+  try {
+    await window.api.updateProduct(id, nombre, descripcion, precio);
+    setProducts(prev => 
+      prev.map(p => p.ProductID === id ? { ...p, Nombre: nombre, Descripcion: descripcion, Precio: precio } : p)
+    );
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+  };
+
   const deleteProduct = async (id: number) => {
     if (!window.api) {
       throw new Error('API no disponible');
@@ -50,5 +62,5 @@ export function useProducts() {
     await loadProducts();
   };
 
-  return { products, loading, error, addProduct, deleteProduct, loadProducts };
+  return { products, loading, error, addProduct, deleteProduct, loadProducts, updateProduct };
 }

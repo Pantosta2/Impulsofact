@@ -2,8 +2,6 @@ import { app } from 'electron';
 import path from 'node:path';
 import Database from 'better-sqlite3';
 
-
-
 class AppDatabase {
     db: Database.Database;
     
@@ -29,6 +27,15 @@ class AppDatabase {
         const stmt = this.db.prepare('INSERT INTO Products (Nombre, Descripcion, Precio) VALUES (?, ?, ?)');
         const info = stmt.run(Nombre, Descripcion, Precio);
         return info.lastInsertRowid;
+    }
+    updateProduct(ProductID: number, Nombre: string, Descripcion: string, Precio: number) {
+        const stmt = this.db.prepare(`
+            UPDATE Products 
+            SET Nombre = ?, Descripcion = ?, Precio = ? 
+            WHERE ProductID = ?
+        `);
+        const info = stmt.run(Nombre, Descripcion, Precio, ProductID);
+        return info.changes > 0;
     }
     deleteProduct(ProductID: number) {
         const stmt = this.db.prepare('DELETE FROM Products WHERE ProductID = ?');
